@@ -8,7 +8,7 @@
         <result column="phone" property="phone" jdbcType="CHAR"/>
         <result column="telephone" property="telephone" jdbcType="VARCHAR"/>
         <result column="address" property="address" jdbcType="VARCHAR"/>
-        <result column="enabled" property="enabled" jdbcType="BIT"/>
+        <result column="state" property="state" jdbcType="BIT"/>
         <result column="username" property="username" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR"/>
         <result column="userface" property="userface" jdbcType="VARCHAR"/>
@@ -24,7 +24,7 @@
 
     <!-- sql    -->
     <sql id="Base_Column_List">
-        id, name, phone, telephone, address, enabled, username, password, userface, remark
+        id, name, phone, telephone, address, state, username, password, userface, remark
     </sql>
 
     <!-- select   -->
@@ -36,7 +36,7 @@
     </select>
 
     <select id="getAllHrs" resultMap="BaseResultMap">
-        select hr.id, hr.name, hr.phone, hr.telephone, hr.address, hr.enabled, hr.username, hr.userface,
+        select hr.id, hr.name, hr.phone, hr.telephone, hr.address, hr.state, hr.username, hr.userface,
         hr.remark,r.`id` as rid,r.`name` as rname,r.`nameZh` as rnameZh
         from hr
         left join hr_role hrr on hr.`id`=hrr.`hrid`
@@ -58,15 +58,21 @@
         where hrr.`rid`=r.`id` and hrr.`hrid`=#{id}
     </select>
 
+    <select id="loadUserByUsername" resultType="org.yangsibao.vhr.model.Hr">
+        select *
+        from hr
+        where username = #{username}
+    </select>
+
 
     <!-- insert   -->
     <insert id="insert" parameterType="org.yangsibao.vhr.model.Hr">
         insert into hr (id, name, phone,
-          telephone, address, enabled,
+          telephone, address, state,
           username, password, userface,
           remark)
         values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{phone,jdbcType=CHAR},
-          #{telephone,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{enabled,jdbcType=BIT},
+          #{telephone,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{state,jdbcType=BIT},
           #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{userface,jdbcType=VARCHAR},
           #{remark,jdbcType=VARCHAR})
     </insert>
@@ -89,8 +95,8 @@
             <if test="address != null">
                 address,
             </if>
-            <if test="enabled != null">
-                enabled,
+            <if test="state != null">
+                state,
             </if>
             <if test="username != null">
                 username,
@@ -121,8 +127,8 @@
             <if test="address != null">
                 #{address,jdbcType=VARCHAR},
             </if>
-            <if test="enabled != null">
-                #{enabled,jdbcType=BIT},
+            <if test="state != null">
+                #{state,jdbcType=BIT},
             </if>
             <if test="username != null">
                 #{username,jdbcType=VARCHAR},
@@ -150,7 +156,7 @@
           phone = #{phone,jdbcType=CHAR},
           telephone = #{telephone,jdbcType=VARCHAR},
           address = #{address,jdbcType=VARCHAR},
-          enabled = #{enabled,jdbcType=BIT},
+          state = #{state,jdbcType=BIT},
           username = #{username,jdbcType=VARCHAR},
           password = #{password,jdbcType=VARCHAR},
           userface = #{userface,jdbcType=VARCHAR},
@@ -173,8 +179,8 @@
             <if test="address != null">
                 address = #{address,jdbcType=VARCHAR},
             </if>
-            <if test="enabled != null">
-                enabled = #{enabled,jdbcType=BIT},
+            <if test="state != null">
+                state = #{state,jdbcType=BIT},
             </if>
             <if test="username != null">
                 username = #{username,jdbcType=VARCHAR},

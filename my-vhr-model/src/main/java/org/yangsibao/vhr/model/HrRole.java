@@ -1,12 +1,14 @@
 package org.yangsibao.vhr.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author yangsibao
  * @date 2020/5/14-17:39
  */
-@Data
+@Getter
+@Setter
 public class HrRole {
 
     private Integer id;

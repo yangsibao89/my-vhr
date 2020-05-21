@@ -1,8 +1,12 @@
 package org.yangsibao.vhr.model;
 
 import lombok.Data;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.management.relation.Role;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -10,7 +14,7 @@ import java.util.List;
  * @date 2020/5/12-18:12
  */
 @Data
-public class Hr {
+public class Hr implements UserDetails {
 
     private Integer id;
 
@@ -22,7 +26,7 @@ public class Hr {
 
     private String address;
 
-    private Boolean enabled;
+    private Boolean state;
 
     private String username;
 
@@ -33,4 +37,34 @@ public class Hr {
     private String remark;
 
     private List<Role> roles;
+
+    // 将本hr对应的role遍历，并赋予一个GrantedAhthority的实现类的集合中，此集合对象保存该hr的所有授权
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        List<SimpleGrantedAuthority> authorities = new ArrayList<>(roles.size());
+        for (Role role : roles) {
+            authorities.add(new SimpleGrantedAuthority(role.getName()));
+        }
+        return authorities;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 }

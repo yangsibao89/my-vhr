@@ -2,6 +2,7 @@ package org.yangsibao.vhr.model;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -9,7 +10,7 @@ import java.util.List;
  * @date 2020/5/13-17:33
  */
 @Data
-public class Menu {
+public class Menu implements Serializable {
 
     private Integer id;
 
@@ -27,7 +28,7 @@ public class Menu {
 
     private Integer parentId;
 
-    private Boolean enabled;
+    private Boolean state;
 
     private List<Menu> children;
 

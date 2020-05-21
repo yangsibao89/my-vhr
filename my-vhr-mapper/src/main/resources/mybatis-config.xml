@@ -11,8 +11,7 @@
             <!--使用数据池，复用实例-->
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url"
-                          value="jdbc:mysql://localhost:3306/myvhr?useSSL=false"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/myvhr?useSSL=false"/>
                 <property name="username" value="root"/>
                 <property name="password" value="root"/>
             </dataSource>

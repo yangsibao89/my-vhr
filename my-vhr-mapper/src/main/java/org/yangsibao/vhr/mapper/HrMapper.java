@@ -95,5 +95,7 @@ public interface HrMapper {
      */
     List<Role> getHrRolesById(Integer id);
 
+    Hr loadUserByUsername(String username);
+
 
 }
