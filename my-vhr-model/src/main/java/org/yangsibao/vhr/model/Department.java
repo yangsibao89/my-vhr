@@ -3,6 +3,7 @@ package org.yangsibao.vhr.model;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,7 +26,7 @@ public class Department implements Serializable {
 
     private Boolean isParent;
 
-    private List<Department> children;
+    private List<Department> children = new ArrayList<>();
 
     private Integer result;
 

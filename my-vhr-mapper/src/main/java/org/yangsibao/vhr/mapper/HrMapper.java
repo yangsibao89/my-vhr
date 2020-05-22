@@ -97,5 +97,7 @@ public interface HrMapper {
 
     Hr loadUserByUsername(String username);
 
+    Integer updateUserface(@Param("url") String url, @Param("id") Integer id);
+
 
 }

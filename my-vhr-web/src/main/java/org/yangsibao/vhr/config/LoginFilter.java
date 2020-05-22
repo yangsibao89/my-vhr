@@ -1,4 +1,4 @@
-package org.yangsibao.vhr.config.filter;
+package org.yangsibao.vhr.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.MediaType;
@@ -47,6 +47,8 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
             username = username.trim();
             UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(
                     username, password);
+
+            // Allow subclasses to set the "details" property ?!
             setDetails(request, authRequest);
             return this.getAuthenticationManager().authenticate(authRequest);
         } else {

@@ -14,7 +14,7 @@
 
     <resultMap id="DepartmentWithChildren" type="org.yangsibao.vhr.model.Department" extends="BaseResultMap">
         <collection property="children" ofType="org.yangsibao.vhr.model.Department"
-                    select="org.javaboy.vhr.mapper.DepartmentMapper.getAllDepartmentsByParentId" column="id"/>
+                    select="org.yangsibao.vhr.mapper.DepartmentMapper.getAllDepartmentsByParentId" column="id"/>
     </resultMap>
 
     <sql id="Base_Column_List">

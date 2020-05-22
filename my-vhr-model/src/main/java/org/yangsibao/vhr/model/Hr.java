@@ -1,5 +1,6 @@
 package org.yangsibao.vhr.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -40,6 +41,7 @@ public class Hr implements UserDetails {
 
     // 将本hr对应的role遍历，并赋予一个GrantedAhthority的实现类的集合中，此集合对象保存该hr的所有授权
     @Override
+    @JsonIgnore//此字段不要返回去
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<SimpleGrantedAuthority> authorities = new ArrayList<>(roles.size());
         for (Role role : roles) {

@@ -25,16 +25,16 @@
     </select>
 
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from position
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
+        delete from position
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
 
     <insert id="insert" parameterType="org.yangsibao.vhr.model.Position">
-    insert into position (id, name, createDate, 
-      enabled)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
-      #{enabled,jdbcType=BIT})
-  </insert>
+        insert into position (id, name, createDate,
+          enabled)
+        values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP},
+          #{enabled,jdbcType=BIT})
+    </insert>
 
     <insert id="insertSelective" parameterType="org.yangsibao.vhr.model.Position">
         insert into position
