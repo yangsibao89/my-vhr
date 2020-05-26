@@ -79,5 +79,5 @@ public class Employee implements Serializable {
     private Department department;
     private JobLevel jobLevel;
     private Position position;
-    private Salary salary;
+    private SalaryFull salaryFull;
 }

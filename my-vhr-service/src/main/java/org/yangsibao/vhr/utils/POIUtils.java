@@ -33,17 +33,17 @@ public class POIUtils {
         //文档类别
         docInfo.setCategory("员工信息");
         //文档管理员
-        docInfo.setManager("javaboy");
+        docInfo.setManager("yangsibao");
         //设置公司信息
-        docInfo.setCompany("www.javaboy.org");
+        docInfo.setCompany("www.sciencebuild.org");
         //4. 获取文档摘要信息
         SummaryInformation summInfo = workbook.getSummaryInformation();
         //文档标题
         summInfo.setTitle("员工信息表");
         //文档作者
-        summInfo.setAuthor("javaboy");
+        summInfo.setAuthor("yangsibao");
         // 文档备注
-        summInfo.setComments("本文档由 javaboy 提供");
+        summInfo.setComments("本文档由 yangsibao 提供");
         //5. 创建样式
         //创建标题行的样式
         HSSFCellStyle headerStyle = workbook.createCellStyle();

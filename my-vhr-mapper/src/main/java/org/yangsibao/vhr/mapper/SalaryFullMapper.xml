@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.yangsibao.vhr.mapper.SalaryFullMapper">
+    <resultMap id="BaseResultMap" type="org.yangsibao.vhr.model.SalaryFull">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="basicWage" property="basicwage" jdbcType="INTEGER"/>
+        <result column="seniorityWage" property="senioritywage" jdbcType="INTEGER"/>
+        <result column="positionWage" property="positionwage" jdbcType="INTEGER"/>
+        <result column="performanceWage" property="performancewage" jdbcType="INTEGER"/>
+        <result column="phoneAllowance" property="phoneallowance" jdbcType="INTEGER"/>
+        <result column="trafficAllowance" property="trafficallowance" jdbcType="INTEGER"/>
+        <result column="registAllowance" property="registallowance" jdbcType="INTEGER"/>
+        <result column="registSupply" property="registsupply" jdbcType="INTEGER"/>
+        <result column="rentAllowance" property="rentallowance" jdbcType="INTEGER"/>
+        <result column="rentSupply" property="rentsupply" jdbcType="INTEGER"/>
+        <result column="aloneAllowance" property="aloneallowance" jdbcType="INTEGER"/>
+        <result column="aloneSupply" property="alonesupply" jdbcType="INTEGER"/>
+        <result column="hui" property="hui" jdbcType="INTEGER"/>
+        <result column="fire" property="fire" jdbcType="INTEGER"/>
+        <result column="cool" property="cool" jdbcType="INTEGER"/>
+        <result column="propertyAllowance" property="propertyallowance" jdbcType="INTEGER"/>
+        <result column="warmAllowance" property="warmallowance" jdbcType="INTEGER"/>
+        <result column="warmSupply" property="warmsupply" jdbcType="INTEGER"/>
+        <result column="propertySupply" property="propertysupply" jdbcType="INTEGER"/>
+        <result column="supply" property="supply" jdbcType="INTEGER"/>
+        <result column="deduction" property="deduction" jdbcType="INTEGER"/>
+        <result column="sickPersonalLeave" property="sickpersonalleave" jdbcType="INTEGER"/>
+        <result column="sum" property="sum" jdbcType="INTEGER"/>
+        <result column="pension" property="pension" jdbcType="INTEGER"/>
+        <result column="largeMedical" property="largemedical" jdbcType="INTEGER"/>
+        <result column="occupationalAnnuity" property="occupationalannuity" jdbcType="INTEGER"/>
+        <result column="provident" property="provident" jdbcType="INTEGER"/>
+        <result column="occupationalAnnuityDecuction" property="occupationalannuitydecuction" jdbcType="INTEGER"/>
+        <result column="largeMedicalDeduction" property="largemedicaldeduction" jdbcType="INTEGER"/>
+        <result column="pensionBack" property="pensionback" jdbcType="INTEGER"/>
+        <result column="insuranceDeduction" property="insurancededuction" jdbcType="INTEGER"/>
+        <result column="sumDeduction" property="sumdeduction" jdbcType="INTEGER"/>
+        <result column="providentBack" property="providentback" jdbcType="INTEGER"/>
+        <result column="providentDeduction" property="providentdeduction" jdbcType="INTEGER"/>
+        <result column="member" property="member" jdbcType="INTEGER"/>
+        <result column="individual" property="individual" jdbcType="INTEGER"/>
+        <result column="actualSum" property="actualsum" jdbcType="INTEGER"/>
+        <result column="agencySum" property="agencysum" jdbcType="INTEGER"/>
+        <result column="deductionSum" property="deductionsum" jdbcType="INTEGER"/>
+        <result column="repay" property="repay" jdbcType="INTEGER"/>
+        <result column="actualWage" property="actualwage" jdbcType="INTEGER"/>
+        <result column="addProvidentBack" property="addprovidentback" jdbcType="INTEGER"/>
+        <result column="total" property="total" jdbcType="INTEGER"/>
+        <result column="base" property="base" jdbcType="INTEGER"/>
+        <result column="pensionPersonalPer" property="pensionpersonalper" jdbcType="DOUBLE"/>
+        <result column="pensionUnitPer" property="pensionunitper" jdbcType="DOUBLE"/>
+        <result column="pensionSumPer" property="pensionsumper" jdbcType="DOUBLE"/>
+        <result column="medicalPersonalPer" property="medicalpersonalper" jdbcType="DOUBLE"/>
+        <result column="medicalUnitPer" property="medicalunitper" jdbcType="DOUBLE"/>
+        <result column="medicalSumPer" property="medicalsumper" jdbcType="DOUBLE"/>
+        <result column="joblessPersonalPer" property="joblesspersonalper" jdbcType="DOUBLE"/>
+        <result column="joblessUnitPer" property="joblessunitper" jdbcType="DOUBLE"/>
+        <result column="joblessSumPer" property="joblesssumper" jdbcType="DOUBLE"/>
+        <result column="injury" property="injury" jdbcType="DOUBLE"/>
+        <result column="birth" property="birth" jdbcType="DOUBLE"/>
+        <result column="personalDeduction" property="personaldeduction" jdbcType="INTEGER"/>
+        <result column="ilargeMedical" property="ilargemedical" jdbcType="INTEGER"/>
+        <result column="unitSum" property="unitsum" jdbcType="INTEGER"/>
+        <result column="month" property="month" jdbcType="INTEGER"/>
+        <result column="pbase" property="pbase" jdbcType="INTEGER"/>
+        <result column="per" property="per" jdbcType="INTEGER"/>
+        <result column="personal" property="personal" jdbcType="INTEGER"/>
+        <result column="unit" property="unit" jdbcType="INTEGER"/>
+        <result column="pmonth" property="pmonth" jdbcType="INTEGER"/>
+        <result column="back" property="back" jdbcType="INTEGER"/>
+        <result column="ptotal" property="ptotal" jdbcType="INTEGER"/>
+        <result column="bonus" property="bonus" jdbcType="INTEGER"/>
+        <result column="allSalary" property="allsalary" jdbcType="INTEGER"/>
+        <result column="createDate" property="createdate" jdbcType="TIMESTAMP"/>
+        <result column="issueDate" property="issuedate" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, name, basicWage, seniorityWage, positionWage, performanceWage, phoneAllowance, 
+    trafficAllowance, registAllowance, registSupply, rentAllowance, rentSupply, aloneAllowance, 
+    aloneSupply, hui, fire, cool, propertyAllowance, warmAllowance, warmSupply, propertySupply, 
+    supply, deduction, sickPersonalLeave, sum, pension, largeMedical, occupationalAnnuity, 
+    provident, occupationalAnnuityDecuction, largeMedicalDeduction, pensionBack, insuranceDeduction, 
+    sumDeduction, providentBack, providentDeduction, member, individual, actualSum, agencySum, 
+    deductionSum, repay, actualWage, addProvidentBack, total, base, pensionPersonalPer, 
+    pensionUnitPer, pensionSumPer, medicalPersonalPer, medicalUnitPer, medicalSumPer, 
+    joblessPersonalPer, joblessUnitPer, joblessSumPer, injury, birth, personalDeduction, 
+    ilargeMedical, unitSum, month, pbase, per, personal, unit, pmonth, back, ptotal, 
+    bonus, allSalary, createDate, issueDate
+  </sql>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from salary_full
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <select id="getAllSalaryFulls" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from salary_full
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from salary_full
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="org.yangsibao.vhr.model.SalaryFull">
+    insert into salary_full (id, name, basicWage, 
+      seniorityWage, positionWage, performanceWage, 
+      phoneAllowance, trafficAllowance, registAllowance, 
+      registSupply, rentAllowance, rentSupply, 
+      aloneAllowance, aloneSupply, hui, 
+      fire, cool, propertyAllowance, 
+      warmAllowance, warmSupply, propertySupply, 
+      supply, deduction, sickPersonalLeave, 
+      sum, pension, largeMedical, 
+      occupationalAnnuity, provident, occupationalAnnuityDecuction, 
+      largeMedicalDeduction, pensionBack, insuranceDeduction, 
+      sumDeduction, providentBack, providentDeduction, 
+      member, individual, actualSum, 
+      agencySum, deductionSum, repay, 
+      actualWage, addProvidentBack, total, 
+      base, pensionPersonalPer, pensionUnitPer, 
+      pensionSumPer, medicalPersonalPer, medicalUnitPer, 
+      medicalSumPer, joblessPersonalPer, joblessUnitPer, 
+      joblessSumPer, injury, birth, 
+      personalDeduction, ilargeMedical, unitSum, 
+      month, pbase, per, 
+      personal, unit, pmonth, 
+      back, ptotal, bonus, 
+      allSalary, createDate, issueDate
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{basicwage,jdbcType=INTEGER}, 
+      #{senioritywage,jdbcType=INTEGER}, #{positionwage,jdbcType=INTEGER}, #{performancewage,jdbcType=INTEGER}, 
+      #{phoneallowance,jdbcType=INTEGER}, #{trafficallowance,jdbcType=INTEGER}, #{registallowance,jdbcType=INTEGER}, 
+      #{registsupply,jdbcType=INTEGER}, #{rentallowance,jdbcType=INTEGER}, #{rentsupply,jdbcType=INTEGER}, 
+      #{aloneallowance,jdbcType=INTEGER}, #{alonesupply,jdbcType=INTEGER}, #{hui,jdbcType=INTEGER}, 
+      #{fire,jdbcType=INTEGER}, #{cool,jdbcType=INTEGER}, #{propertyallowance,jdbcType=INTEGER}, 
+      #{warmallowance,jdbcType=INTEGER}, #{warmsupply,jdbcType=INTEGER}, #{propertysupply,jdbcType=INTEGER}, 
+      #{supply,jdbcType=INTEGER}, #{deduction,jdbcType=INTEGER}, #{sickpersonalleave,jdbcType=INTEGER}, 
+      #{sum,jdbcType=INTEGER}, #{pension,jdbcType=INTEGER}, #{largemedical,jdbcType=INTEGER}, 
+      #{occupationalannuity,jdbcType=INTEGER}, #{provident,jdbcType=INTEGER}, #{occupationalannuitydecuction,jdbcType=INTEGER}, 
+      #{largemedicaldeduction,jdbcType=INTEGER}, #{pensionback,jdbcType=INTEGER}, #{insurancededuction,jdbcType=INTEGER}, 
+      #{sumdeduction,jdbcType=INTEGER}, #{providentback,jdbcType=INTEGER}, #{providentdeduction,jdbcType=INTEGER}, 
+      #{member,jdbcType=INTEGER}, #{individual,jdbcType=INTEGER}, #{actualsum,jdbcType=INTEGER}, 
+      #{agencysum,jdbcType=INTEGER}, #{deductionsum,jdbcType=INTEGER}, #{repay,jdbcType=INTEGER}, 
+      #{actualwage,jdbcType=INTEGER}, #{addprovidentback,jdbcType=INTEGER}, #{total,jdbcType=INTEGER}, 
+      #{base,jdbcType=INTEGER}, #{pensionpersonalper,jdbcType=DOUBLE}, #{pensionunitper,jdbcType=DOUBLE}, 
+      #{pensionsumper,jdbcType=DOUBLE}, #{medicalpersonalper,jdbcType=DOUBLE}, #{medicalunitper,jdbcType=DOUBLE}, 
+      #{medicalsumper,jdbcType=DOUBLE}, #{joblesspersonalper,jdbcType=DOUBLE}, #{joblessunitper,jdbcType=DOUBLE}, 
+      #{joblesssumper,jdbcType=DOUBLE}, #{injury,jdbcType=DOUBLE}, #{birth,jdbcType=DOUBLE}, 
+      #{personaldeduction,jdbcType=INTEGER}, #{ilargemedical,jdbcType=INTEGER}, #{unitsum,jdbcType=INTEGER}, 
+      #{month,jdbcType=INTEGER}, #{pbase,jdbcType=INTEGER}, #{per,jdbcType=INTEGER}, 
+      #{personal,jdbcType=INTEGER}, #{unit,jdbcType=INTEGER}, #{pmonth,jdbcType=INTEGER}, 
+      #{back,jdbcType=INTEGER}, #{ptotal,jdbcType=INTEGER}, #{bonus,jdbcType=INTEGER}, 
+      #{allsalary,jdbcType=INTEGER}, #{createdate,jdbcType=TIMESTAMP}, #{issuedate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="org.yangsibao.vhr.model.SalaryFull">
+        insert into salary_full
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="basicwage != null">
+                basicWage,
+            </if>
+            <if test="senioritywage != null">
+                seniorityWage,
+            </if>
+            <if test="positionwage != null">
+                positionWage,
+            </if>
+            <if test="performancewage != null">
+                performanceWage,
+            </if>
+            <if test="phoneallowance != null">
+                phoneAllowance,
+            </if>
+            <if test="trafficallowance != null">
+                trafficAllowance,
+            </if>
+            <if test="registallowance != null">
+                registAllowance,
+            </if>
+            <if test="registsupply != null">
+                registSupply,
+            </if>
+            <if test="rentallowance != null">
+                rentAllowance,
+            </if>
+            <if test="rentsupply != null">
+                rentSupply,
+            </if>
+            <if test="aloneallowance != null">
+                aloneAllowance,
+            </if>
+            <if test="alonesupply != null">
+                aloneSupply,
+            </if>
+            <if test="hui != null">
+                hui,
+            </if>
+            <if test="fire != null">
+                fire,
+            </if>
+            <if test="cool != null">
+                cool,
+            </if>
+            <if test="propertyallowance != null">
+                propertyAllowance,
+            </if>
+            <if test="warmallowance != null">
+                warmAllowance,
+            </if>
+            <if test="warmsupply != null">
+                warmSupply,
+            </if>
+            <if test="propertysupply != null">
+                propertySupply,
+            </if>
+            <if test="supply != null">
+                supply,
+            </if>
+            <if test="deduction != null">
+                deduction,
+            </if>
+            <if test="sickpersonalleave != null">
+                sickPersonalLeave,
+            </if>
+            <if test="sum != null">
+                sum,
+            </if>
+            <if test="pension != null">
+                pension,
+            </if>
+            <if test="largemedical != null">
+                largeMedical,
+            </if>
+            <if test="occupationalannuity != null">
+                occupationalAnnuity,
+            </if>
+            <if test="provident != null">
+                provident,
+            </if>
+            <if test="occupationalannuitydecuction != null">
+                occupationalAnnuityDecuction,
+            </if>
+            <if test="largemedicaldeduction != null">
+                largeMedicalDeduction,
+            </if>
+            <if test="pensionback != null">
+                pensionBack,
+            </if>
+            <if test="insurancededuction != null">
+                insuranceDeduction,
+            </if>
+            <if test="sumdeduction != null">
+                sumDeduction,
+            </if>
+            <if test="providentback != null">
+                providentBack,
+            </if>
+            <if test="providentdeduction != null">
+                providentDeduction,
+            </if>
+            <if test="member != null">
+                member,
+            </if>
+            <if test="individual != null">
+                individual,
+            </if>
+            <if test="actualsum != null">
+                actualSum,
+            </if>
+            <if test="agencysum != null">
+                agencySum,
+            </if>
+            <if test="deductionsum != null">
+                deductionSum,
+            </if>
+            <if test="repay != null">
+                repay,
+            </if>
+            <if test="actualwage != null">
+                actualWage,
+            </if>
+            <if test="addprovidentback != null">
+                addProvidentBack,
+            </if>
+            <if test="total != null">
+                total,
+            </if>
+            <if test="base != null">
+                base,
+            </if>
+            <if test="pensionpersonalper != null">
+                pensionPersonalPer,
+            </if>
+            <if test="pensionunitper != null">
+                pensionUnitPer,
+            </if>
+            <if test="pensionsumper != null">
+                pensionSumPer,
+            </if>
+            <if test="medicalpersonalper != null">
+                medicalPersonalPer,
+            </if>
+            <if test="medicalunitper != null">
+                medicalUnitPer,
+            </if>
+            <if test="medicalsumper != null">
+                medicalSumPer,
+            </if>
+            <if test="joblesspersonalper != null">
+                joblessPersonalPer,
+            </if>
+            <if test="joblessunitper != null">
+                joblessUnitPer,
+            </if>
+            <if test="joblesssumper != null">
+                joblessSumPer,
+            </if>
+            <if test="injury != null">
+                injury,
+            </if>
+            <if test="birth != null">
+                birth,
+            </if>
+            <if test="personaldeduction != null">
+                personalDeduction,
+            </if>
+            <if test="ilargemedical != null">
+                ilargeMedical,
+            </if>
+            <if test="unitsum != null">
+                unitSum,
+            </if>
+            <if test="month != null">
+                month,
+            </if>
+            <if test="pbase != null">
+                pbase,
+            </if>
+            <if test="per != null">
+                per,
+            </if>
+            <if test="personal != null">
+                personal,
+            </if>
+            <if test="unit != null">
+                unit,
+            </if>
+            <if test="pmonth != null">
+                pmonth,
+            </if>
+            <if test="back != null">
+                back,
+            </if>
+            <if test="ptotal != null">
+                ptotal,
+            </if>
+            <if test="bonus != null">
+                bonus,
+            </if>
+            <if test="allsalary != null">
+                allSalary,
+            </if>
+            <if test="createdate != null">
+                createDate,
+            </if>
+            <if test="issuedate != null">
+                issueDate,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="basicwage != null">
+                #{basicwage,jdbcType=INTEGER},
+            </if>
+            <if test="senioritywage != null">
+                #{senioritywage,jdbcType=INTEGER},
+            </if>
+            <if test="positionwage != null">
+                #{positionwage,jdbcType=INTEGER},
+            </if>
+            <if test="performancewage != null">
+                #{performancewage,jdbcType=INTEGER},
+            </if>
+            <if test="phoneallowance != null">
+                #{phoneallowance,jdbcType=INTEGER},
+            </if>
+            <if test="trafficallowance != null">
+                #{trafficallowance,jdbcType=INTEGER},
+            </if>
+            <if test="registallowance != null">
+                #{registallowance,jdbcType=INTEGER},
+            </if>
+            <if test="registsupply != null">
+                #{registsupply,jdbcType=INTEGER},
+            </if>
+            <if test="rentallowance != null">
+                #{rentallowance,jdbcType=INTEGER},
+            </if>
+            <if test="rentsupply != null">
+                #{rentsupply,jdbcType=INTEGER},
+            </if>
+            <if test="aloneallowance != null">
+                #{aloneallowance,jdbcType=INTEGER},
+            </if>
+            <if test="alonesupply != null">
+                #{alonesupply,jdbcType=INTEGER},
+            </if>
+            <if test="hui != null">
+                #{hui,jdbcType=INTEGER},
+            </if>
+            <if test="fire != null">
+                #{fire,jdbcType=INTEGER},
+            </if>
+            <if test="cool != null">
+                #{cool,jdbcType=INTEGER},
+            </if>
+            <if test="propertyallowance != null">
+                #{propertyallowance,jdbcType=INTEGER},
+            </if>
+            <if test="warmallowance != null">
+                #{warmallowance,jdbcType=INTEGER},
+            </if>
+            <if test="warmsupply != null">
+                #{warmsupply,jdbcType=INTEGER},
+            </if>
+            <if test="propertysupply != null">
+                #{propertysupply,jdbcType=INTEGER},
+            </if>
+            <if test="supply != null">
+                #{supply,jdbcType=INTEGER},
+            </if>
+            <if test="deduction != null">
+                #{deduction,jdbcType=INTEGER},
+            </if>
+            <if test="sickpersonalleave != null">
+                #{sickpersonalleave,jdbcType=INTEGER},
+            </if>
+            <if test="sum != null">
+                #{sum,jdbcType=INTEGER},
+            </if>
+            <if test="pension != null">
+                #{pension,jdbcType=INTEGER},
+            </if>
+            <if test="largemedical != null">
+                #{largemedical,jdbcType=INTEGER},
+            </if>
+            <if test="occupationalannuity != null">
+                #{occupationalannuity,jdbcType=INTEGER},
+            </if>
+            <if test="provident != null">
+                #{provident,jdbcType=INTEGER},
+            </if>
+            <if test="occupationalannuitydecuction != null">
+                #{occupationalannuitydecuction,jdbcType=INTEGER},
+            </if>
+            <if test="largemedicaldeduction != null">
+                #{largemedicaldeduction,jdbcType=INTEGER},
+            </if>
+            <if test="pensionback != null">
+                #{pensionback,jdbcType=INTEGER},
+            </if>
+            <if test="insurancededuction != null">
+                #{insurancededuction,jdbcType=INTEGER},
+            </if>
+            <if test="sumdeduction != null">
+                #{sumdeduction,jdbcType=INTEGER},
+            </if>
+            <if test="providentback != null">
+                #{providentback,jdbcType=INTEGER},
+            </if>
+            <if test="providentdeduction != null">
+                #{providentdeduction,jdbcType=INTEGER},
+            </if>
+            <if test="member != null">
+                #{member,jdbcType=INTEGER},
+            </if>
+            <if test="individual != null">
+                #{individual,jdbcType=INTEGER},
+            </if>
+            <if test="actualsum != null">
+                #{actualsum,jdbcType=INTEGER},
+            </if>
+            <if test="agencysum != null">
+                #{agencysum,jdbcType=INTEGER},
+            </if>
+            <if test="deductionsum != null">
+                #{deductionsum,jdbcType=INTEGER},
+            </if>
+            <if test="repay != null">
+                #{repay,jdbcType=INTEGER},
+            </if>
+            <if test="actualwage != null">
+                #{actualwage,jdbcType=INTEGER},
+            </if>
+            <if test="addprovidentback != null">
+                #{addprovidentback,jdbcType=INTEGER},
+            </if>
+            <if test="total != null">
+                #{total,jdbcType=INTEGER},
+            </if>
+            <if test="base != null">
+                #{base,jdbcType=INTEGER},
+            </if>
+            <if test="pensionpersonalper != null">
+                #{pensionpersonalper,jdbcType=DOUBLE},
+            </if>
+            <if test="pensionunitper != null">
+                #{pensionunitper,jdbcType=DOUBLE},
+            </if>
+            <if test="pensionsumper != null">
+                #{pensionsumper,jdbcType=DOUBLE},
+            </if>
+            <if test="medicalpersonalper != null">
+                #{medicalpersonalper,jdbcType=DOUBLE},
+            </if>
+            <if test="medicalunitper != null">
+                #{medicalunitper,jdbcType=DOUBLE},
+            </if>
+            <if test="medicalsumper != null">
+                #{medicalsumper,jdbcType=DOUBLE},
+            </if>
+            <if test="joblesspersonalper != null">
+                #{joblesspersonalper,jdbcType=DOUBLE},
+            </if>
+            <if test="joblessunitper != null">
+                #{joblessunitper,jdbcType=DOUBLE},
+            </if>
+            <if test="joblesssumper != null">
+                #{joblesssumper,jdbcType=DOUBLE},
+            </if>
+            <if test="injury != null">
+                #{injury,jdbcType=DOUBLE},
+            </if>
+            <if test="birth != null">
+                #{birth,jdbcType=DOUBLE},
+            </if>
+            <if test="personaldeduction != null">
+                #{personaldeduction,jdbcType=INTEGER},
+            </if>
+            <if test="ilargemedical != null">
+                #{ilargemedical,jdbcType=INTEGER},
+            </if>
+            <if test="unitsum != null">
+                #{unitsum,jdbcType=INTEGER},
+            </if>
+            <if test="month != null">
+                #{month,jdbcType=INTEGER},
+            </if>
+            <if test="pbase != null">
+                #{pbase,jdbcType=INTEGER},
+            </if>
+            <if test="per != null">
+                #{per,jdbcType=INTEGER},
+            </if>
+            <if test="personal != null">
+                #{personal,jdbcType=INTEGER},
+            </if>
+            <if test="unit != null">
+                #{unit,jdbcType=INTEGER},
+            </if>
+            <if test="pmonth != null">
+                #{pmonth,jdbcType=INTEGER},
+            </if>
+            <if test="back != null">
+                #{back,jdbcType=INTEGER},
+            </if>
+            <if test="ptotal != null">
+                #{ptotal,jdbcType=INTEGER},
+            </if>
+            <if test="bonus != null">
+                #{bonus,jdbcType=INTEGER},
+            </if>
+            <if test="allsalary != null">
+                #{allsalary,jdbcType=INTEGER},
+            </if>
+            <if test="createdate != null">
+                #{createdate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="issuedate != null">
+                #{issuedate,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="org.yangsibao.vhr.model.SalaryFull">
+        update salary_full
+        <set>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="basicwage != null">
+                basicWage = #{basicwage,jdbcType=INTEGER},
+            </if>
+            <if test="senioritywage != null">
+                seniorityWage = #{senioritywage,jdbcType=INTEGER},
+            </if>
+            <if test="positionwage != null">
+                positionWage = #{positionwage,jdbcType=INTEGER},
+            </if>
+            <if test="performancewage != null">
+                performanceWage = #{performancewage,jdbcType=INTEGER},
+            </if>
+            <if test="phoneallowance != null">
+                phoneAllowance = #{phoneallowance,jdbcType=INTEGER},
+            </if>
+            <if test="trafficallowance != null">
+                trafficAllowance = #{trafficallowance,jdbcType=INTEGER},
+            </if>
+            <if test="registallowance != null">
+                registAllowance = #{registallowance,jdbcType=INTEGER},
+            </if>
+            <if test="registsupply != null">
+                registSupply = #{registsupply,jdbcType=INTEGER},
+            </if>
+            <if test="rentallowance != null">
+                rentAllowance = #{rentallowance,jdbcType=INTEGER},
+            </if>
+            <if test="rentsupply != null">
+                rentSupply = #{rentsupply,jdbcType=INTEGER},
+            </if>
+            <if test="aloneallowance != null">
+                aloneAllowance = #{aloneallowance,jdbcType=INTEGER},
+            </if>
+            <if test="alonesupply != null">
+                aloneSupply = #{alonesupply,jdbcType=INTEGER},
+            </if>
+            <if test="hui != null">
+                hui = #{hui,jdbcType=INTEGER},
+            </if>
+            <if test="fire != null">
+                fire = #{fire,jdbcType=INTEGER},
+            </if>
+            <if test="cool != null">
+                cool = #{cool,jdbcType=INTEGER},
+            </if>
+            <if test="propertyallowance != null">
+                propertyAllowance = #{propertyallowance,jdbcType=INTEGER},
+            </if>
+            <if test="warmallowance != null">
+                warmAllowance = #{warmallowance,jdbcType=INTEGER},
+            </if>
+            <if test="warmsupply != null">
+                warmSupply = #{warmsupply,jdbcType=INTEGER},
+            </if>
+            <if test="propertysupply != null">
+                propertySupply = #{propertysupply,jdbcType=INTEGER},
+            </if>
+            <if test="supply != null">
+                supply = #{supply,jdbcType=INTEGER},
+            </if>
+            <if test="deduction != null">
+                deduction = #{deduction,jdbcType=INTEGER},
+            </if>
+            <if test="sickpersonalleave != null">
+                sickPersonalLeave = #{sickpersonalleave,jdbcType=INTEGER},
+            </if>
+            <if test="sum != null">
+                sum = #{sum,jdbcType=INTEGER},
+            </if>
+            <if test="pension != null">
+                pension = #{pension,jdbcType=INTEGER},
+            </if>
+            <if test="largemedical != null">
+                largeMedical = #{largemedical,jdbcType=INTEGER},
+            </if>
+            <if test="occupationalannuity != null">
+                occupationalAnnuity = #{occupationalannuity,jdbcType=INTEGER},
+            </if>
+            <if test="provident != null">
+                provident = #{provident,jdbcType=INTEGER},
+            </if>
+            <if test="occupationalannuitydecuction != null">
+                occupationalAnnuityDecuction = #{occupationalannuitydecuction,jdbcType=INTEGER},
+            </if>
+            <if test="largemedicaldeduction != null">
+                largeMedicalDeduction = #{largemedicaldeduction,jdbcType=INTEGER},
+            </if>
+            <if test="pensionback != null">
+                pensionBack = #{pensionback,jdbcType=INTEGER},
+            </if>
+            <if test="insurancededuction != null">
+                insuranceDeduction = #{insurancededuction,jdbcType=INTEGER},
+            </if>
+            <if test="sumdeduction != null">
+                sumDeduction = #{sumdeduction,jdbcType=INTEGER},
+            </if>
+            <if test="providentback != null">
+                providentBack = #{providentback,jdbcType=INTEGER},
+            </if>
+            <if test="providentdeduction != null">
+                providentDeduction = #{providentdeduction,jdbcType=INTEGER},
+            </if>
+            <if test="member != null">
+                member = #{member,jdbcType=INTEGER},
+            </if>
+            <if test="individual != null">
+                individual = #{individual,jdbcType=INTEGER},
+            </if>
+            <if test="actualsum != null">
+                actualSum = #{actualsum,jdbcType=INTEGER},
+            </if>
+            <if test="agencysum != null">
+                agencySum = #{agencysum,jdbcType=INTEGER},
+            </if>
+            <if test="deductionsum != null">
+                deductionSum = #{deductionsum,jdbcType=INTEGER},
+            </if>
+            <if test="repay != null">
+                repay = #{repay,jdbcType=INTEGER},
+            </if>
+            <if test="actualwage != null">
+                actualWage = #{actualwage,jdbcType=INTEGER},
+            </if>
+            <if test="addprovidentback != null">
+                addProvidentBack = #{addprovidentback,jdbcType=INTEGER},
+            </if>
+            <if test="total != null">
+                total = #{total,jdbcType=INTEGER},
+            </if>
+            <if test="base != null">
+                base = #{base,jdbcType=INTEGER},
+            </if>
+            <if test="pensionpersonalper != null">
+                pensionPersonalPer = #{pensionpersonalper,jdbcType=DOUBLE},
+            </if>
+            <if test="pensionunitper != null">
+                pensionUnitPer = #{pensionunitper,jdbcType=DOUBLE},
+            </if>
+            <if test="pensionsumper != null">
+                pensionSumPer = #{pensionsumper,jdbcType=DOUBLE},
+            </if>
+            <if test="medicalpersonalper != null">
+                medicalPersonalPer = #{medicalpersonalper,jdbcType=DOUBLE},
+            </if>
+            <if test="medicalunitper != null">
+                medicalUnitPer = #{medicalunitper,jdbcType=DOUBLE},
+            </if>
+            <if test="medicalsumper != null">
+                medicalSumPer = #{medicalsumper,jdbcType=DOUBLE},
+            </if>
+            <if test="joblesspersonalper != null">
+                joblessPersonalPer = #{joblesspersonalper,jdbcType=DOUBLE},
+            </if>
+            <if test="joblessunitper != null">
+                joblessUnitPer = #{joblessunitper,jdbcType=DOUBLE},
+            </if>
+            <if test="joblesssumper != null">
+                joblessSumPer = #{joblesssumper,jdbcType=DOUBLE},
+            </if>
+            <if test="injury != null">
+                injury = #{injury,jdbcType=DOUBLE},
+            </if>
+            <if test="birth != null">
+                birth = #{birth,jdbcType=DOUBLE},
+            </if>
+            <if test="personaldeduction != null">
+                personalDeduction = #{personaldeduction,jdbcType=INTEGER},
+            </if>
+            <if test="ilargemedical != null">
+                ilargeMedical = #{ilargemedical,jdbcType=INTEGER},
+            </if>
+            <if test="unitsum != null">
+                unitSum = #{unitsum,jdbcType=INTEGER},
+            </if>
+            <if test="month != null">
+                month = #{month,jdbcType=INTEGER},
+            </if>
+            <if test="pbase != null">
+                pbase = #{pbase,jdbcType=INTEGER},
+            </if>
+            <if test="per != null">
+                per = #{per,jdbcType=INTEGER},
+            </if>
+            <if test="personal != null">
+                personal = #{personal,jdbcType=INTEGER},
+            </if>
+            <if test="unit != null">
+                unit = #{unit,jdbcType=INTEGER},
+            </if>
+            <if test="pmonth != null">
+                pmonth = #{pmonth,jdbcType=INTEGER},
+            </if>
+            <if test="back != null">
+                back = #{back,jdbcType=INTEGER},
+            </if>
+            <if test="ptotal != null">
+                ptotal = #{ptotal,jdbcType=INTEGER},
+            </if>
+            <if test="bonus != null">
+                bonus = #{bonus,jdbcType=INTEGER},
+            </if>
+            <if test="allsalary != null">
+                allSalary = #{allsalary,jdbcType=INTEGER},
+            </if>
+            <if test="createdate != null">
+                createDate = #{createdate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="issuedate != null">
+                issueDate = #{issuedate,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="org.yangsibao.vhr.model.SalaryFull">
+    update salary_full
+    set name = #{name,jdbcType=VARCHAR},
+      basicWage = #{basicwage,jdbcType=INTEGER},
+      seniorityWage = #{senioritywage,jdbcType=INTEGER},
+      positionWage = #{positionwage,jdbcType=INTEGER},
+      performanceWage = #{performancewage,jdbcType=INTEGER},
+      phoneAllowance = #{phoneallowance,jdbcType=INTEGER},
+      trafficAllowance = #{trafficallowance,jdbcType=INTEGER},
+      registAllowance = #{registallowance,jdbcType=INTEGER},
+      registSupply = #{registsupply,jdbcType=INTEGER},
+      rentAllowance = #{rentallowance,jdbcType=INTEGER},
+      rentSupply = #{rentsupply,jdbcType=INTEGER},
+      aloneAllowance = #{aloneallowance,jdbcType=INTEGER},
+      aloneSupply = #{alonesupply,jdbcType=INTEGER},
+      hui = #{hui,jdbcType=INTEGER},
+      fire = #{fire,jdbcType=INTEGER},
+      cool = #{cool,jdbcType=INTEGER},
+      propertyAllowance = #{propertyallowance,jdbcType=INTEGER},
+      warmAllowance = #{warmallowance,jdbcType=INTEGER},
+      warmSupply = #{warmsupply,jdbcType=INTEGER},
+      propertySupply = #{propertysupply,jdbcType=INTEGER},
+      supply = #{supply,jdbcType=INTEGER},
+      deduction = #{deduction,jdbcType=INTEGER},
+      sickPersonalLeave = #{sickpersonalleave,jdbcType=INTEGER},
+      sum = #{sum,jdbcType=INTEGER},
+      pension = #{pension,jdbcType=INTEGER},
+      largeMedical = #{largemedical,jdbcType=INTEGER},
+      occupationalAnnuity = #{occupationalannuity,jdbcType=INTEGER},
+      provident = #{provident,jdbcType=INTEGER},
+      occupationalAnnuityDecuction = #{occupationalannuitydecuction,jdbcType=INTEGER},
+      largeMedicalDeduction = #{largemedicaldeduction,jdbcType=INTEGER},
+      pensionBack = #{pensionback,jdbcType=INTEGER},
+      insuranceDeduction = #{insurancededuction,jdbcType=INTEGER},
+      sumDeduction = #{sumdeduction,jdbcType=INTEGER},
+      providentBack = #{providentback,jdbcType=INTEGER},
+      providentDeduction = #{providentdeduction,jdbcType=INTEGER},
+      member = #{member,jdbcType=INTEGER},
+      individual = #{individual,jdbcType=INTEGER},
+      actualSum = #{actualsum,jdbcType=INTEGER},
+      agencySum = #{agencysum,jdbcType=INTEGER},
+      deductionSum = #{deductionsum,jdbcType=INTEGER},
+      repay = #{repay,jdbcType=INTEGER},
+      actualWage = #{actualwage,jdbcType=INTEGER},
+      addProvidentBack = #{addprovidentback,jdbcType=INTEGER},
+      total = #{total,jdbcType=INTEGER},
+      base = #{base,jdbcType=INTEGER},
+      pensionPersonalPer = #{pensionpersonalper,jdbcType=DOUBLE},
+      pensionUnitPer = #{pensionunitper,jdbcType=DOUBLE},
+      pensionSumPer = #{pensionsumper,jdbcType=DOUBLE},
+      medicalPersonalPer = #{medicalpersonalper,jdbcType=DOUBLE},
+      medicalUnitPer = #{medicalunitper,jdbcType=DOUBLE},
+      medicalSumPer = #{medicalsumper,jdbcType=DOUBLE},
+      joblessPersonalPer = #{joblesspersonalper,jdbcType=DOUBLE},
+      joblessUnitPer = #{joblessunitper,jdbcType=DOUBLE},
+      joblessSumPer = #{joblesssumper,jdbcType=DOUBLE},
+      injury = #{injury,jdbcType=DOUBLE},
+      birth = #{birth,jdbcType=DOUBLE},
+      personalDeduction = #{personaldeduction,jdbcType=INTEGER},
+      ilargeMedical = #{ilargemedical,jdbcType=INTEGER},
+      unitSum = #{unitsum,jdbcType=INTEGER},
+      month = #{month,jdbcType=INTEGER},
+      pbase = #{pbase,jdbcType=INTEGER},
+      per = #{per,jdbcType=INTEGER},
+      personal = #{personal,jdbcType=INTEGER},
+      unit = #{unit,jdbcType=INTEGER},
+      pmonth = #{pmonth,jdbcType=INTEGER},
+      back = #{back,jdbcType=INTEGER},
+      ptotal = #{ptotal,jdbcType=INTEGER},
+      bonus = #{bonus,jdbcType=INTEGER},
+      allSalary = #{allsalary,jdbcType=INTEGER},
+      createDate = #{createdate,jdbcType=TIMESTAMP},
+      issueDate = #{issuedate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

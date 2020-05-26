@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.yangsibao.vhr.model.RespBean;
 import org.yangsibao.vhr.model.RespPageBean;
-import org.yangsibao.vhr.model.Salary;
+import org.yangsibao.vhr.model.SalaryFull;
 import org.yangsibao.vhr.service.EmployeeService;
-import org.yangsibao.vhr.service.SalaryService;
+import org.yangsibao.vhr.service.SalaryFullService;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class SobConfigController {
     @Autowired
     EmployeeService employeeService;
     @Autowired
-    SalaryService salaryService;
+    SalaryFullService salaryFullService;
 
     @GetMapping("/")
     public RespPageBean getEmployeeByPageWithSalary(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10") Integer size) {
@@ -29,8 +29,8 @@ public class SobConfigController {
     }
 
     @GetMapping("/salaries")
-    public List<Salary> getAllSalaries() {
-        return salaryService.getAllSalaries();
+    public List<SalaryFull> getAllSalaries() {
+        return salaryFullService.getAllSalaryFulls();
     }
 
     @PutMapping("/")

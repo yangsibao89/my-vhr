@@ -19,29 +19,19 @@ public class Salary implements Serializable {
 
     private String name;//套账名称
 
-    private Integer basicSalary;//基本工资
-
     private Integer bonus;//奖金
 
-    private Integer lunchSalary;//午餐补贴
-
-    private Integer trafficSalary;//交通补贴
-
     private Integer allSalary;//总收入
-
-    private Integer pensionBase;//养老金基数
-
-    private Float pensionPer;//养老金比率
 
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date createDate;//创建时间
 
-    private Integer medicalBase;//医疗保险基数
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date issueDate;//工资发布日期
 
-    private Float medicalPer;//医疗保险比率
+    private Wage wage;//基本工资
 
-    private Integer accumulationFundBase;//公积金基数
+    private Insurance insurance;//社保
 
-    private Float accumulationFundPer;//公积金比率
-
+    private Provident provident;//公积金
 }

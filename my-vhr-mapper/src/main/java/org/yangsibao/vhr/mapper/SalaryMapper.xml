@@ -4,25 +4,118 @@
 
     <resultMap id="BaseResultMap" type="org.yangsibao.vhr.model.Salary">
         <id column="id" property="id" jdbcType="INTEGER"/>
-        <result column="basicSalary" property="basicSalary" jdbcType="INTEGER"/>
-        <result column="bonus" property="bonus" jdbcType="INTEGER"/>
-        <result column="lunchSalary" property="lunchSalary" jdbcType="INTEGER"/>
-        <result column="trafficSalary" property="trafficSalary" jdbcType="INTEGER"/>
-        <result column="allSalary" property="allSalary" jdbcType="INTEGER"/>
-        <result column="pensionBase" property="pensionBase" jdbcType="INTEGER"/>
-        <result column="pensionPer" property="pensionPer" jdbcType="REAL"/>
-        <result column="createDate" property="createDate" jdbcType="TIMESTAMP"/>
-        <result column="medicalBase" property="medicalBase" jdbcType="INTEGER"/>
-        <result column="medicalPer" property="medicalPer" jdbcType="REAL"/>
-        <result column="accumulationFundBase" property="accumulationFundBase" jdbcType="INTEGER"/>
-        <result column="accumulationFundPer" property="accumulationFundPer" jdbcType="REAL"/>
         <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="bonus" property="bonus" jdbcType="INTEGER"/>
+        <result column="allSalary" property="allSalary" jdbcType="INTEGER"/>
+        <result column="createDate" property="createDate" jdbcType="TIMESTAMP"/>
+        <result column="issueDate" property="issueDate" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <resultMap id="AllSalaryInfo" type="org.yangsibao.vhr.model.Salary" extends="BaseResultMap">
+        <association property="wage" javaType="org.yangsibao.vhr.model.Wage">
+            <id column="wid" property="id"/>
+            <result column="wbasicWage" property="basicWage"/>
+            <result column="wseniorityWage" property="seniorityWage"/>
+            <result column="wpositionWage" property="positionWage"/>
+            <result column="wperformanceWage" property="performanceWage"/>
+            <result column="wphoneAllowance" property="phoneAllowance"/>
+            <result column="wtrafficAllowance" property="trafficAllowance"/>
+            <result column="wregistAllowance" property="registAllowance"/>
+            <result column="wregistSupply" property="registSupply"/>
+            <result column="wrentAllowance" property="rentAllowance"/>
+            <result column="wrentSupply" property="rentSupply"/>
+            <result column="waloneAllowance" property="aloneAllowance"/>
+            <result column="waloneSupply" property="aloneSupply"/>
+            <result column="whui" property="hui"/>
+            <result column="wfire" property="fire"/>
+            <result column="wcool" property="cool"/>
+            <result column="wpropertyAllowance" property="propertyAllowance"/>
+            <result column="wwarmAllowance" property="warmAllowance"/>
+            <result column="wwarmSupply" property="warmSupply"/>
+            <result column="wpropertySupply" property="propertySupply"/>
+            <result column="wsupply" property="supply"/>
+            <result column="wdeduction" property="deduction"/>
+            <result column="wsickPersonalLeave" property="sickPersonalLeave"/>
+            <result column="wsum" property="sum"/>
+            <result column="wpension" property="pension"/>
+            <result column="wlargeMedical" property="largeMedical"/>
+            <result column="woccupationalAnnuity" property="occupationalAnnuity"/>
+            <result column="wprovident" property="provident"/>
+            <result column="woccupationalAnnuityDecuction" property="occupationalAnnuityDecuction"/>
+            <result column="wlargeMedicalDeduction" property="largeMedicalDeduction"/>
+            <result column="wpensionBack" property="pensionBack"/>
+            <result column="winsuranceDeduction" property="insuranceDeduction"/>
+            <result column="wsumDeduction" property="sumDeduction"/>
+            <result column="wprovidentBack" property="providentBack"/>
+            <result column="wprovidentDeduction" property="providentDeduction"/>
+            <result column="wmember" property="member"/>
+            <result column="windividual" property="individual"/>
+            <result column="wactualSum" property="actualSum"/>
+            <result column="wagencySum" property="agencySum"/>
+            <result column="wdeductionSum" property="deductionSum"/>
+            <result column="wrepay" property="repay"/>
+            <result column="wactualWage" property="actualWage"/>
+            <result column="waddProvidentBack" property="addProvidentBack"/>
+            <result column="wtotal" property="total"/>
+        </association>
+
+        <association property="insurance" javaType="org.yangsibao.vhr.model.Insurance">
+            <id column="iid" property="id"/>
+            <result column="ibase" property="base"/>
+            <result column="ipensionPersonalPer" property="pensionPersonalPer"/>
+            <result column="ipensionUnitPer" property="pensionUnitPer"/>
+            <result column="ipensionSumPer" property="pensionSumPer"/>
+            <result column="imedicalPersonalPer" property="medicalPersonalPer"/>
+            <result column="imedicalUnitPer" property="medicalUnitPer"/>
+            <result column="imedicalSumPer" property="medicalSumPer"/>
+            <result column="ijoblessPersonalPer" property="joblessPersonalPer"/>
+            <result column="ijoblessUnitPer" property="joblessUnitPer"/>
+            <result column="ijoblessSumPer" property="joblessSumPer"/>
+            <result column="iinjury" property="injury"/>
+            <result column="ibirth" property="birth"/>
+            <result column="ipersonalDeduction" property="personalDeduction"/>
+            <result column="ilargeMedical" property="largeMedical"/>
+            <result column="iunitSum" property="unitSum"/>
+            <result column="imonth" property="month"/>
+        </association>
+
+        <association property="provident" javaType="org.yangsibao.vhr.model.Provident">
+            <id column="pid" property="id"/>
+            <result column="pbase" property="base"/>
+            <result column="pper" property="per"/>
+            <result column="ppersonal" property="personal"/>
+            <result column="punit" property="unit"/>
+            <result column="pmonth" property="month"/>
+            <result column="pback" property="back"/>
+            <result column="pptotal" property="total"/>
+        </association>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id, basicSalary, bonus, lunchSalary, trafficSalary, allSalary, pensionBase, pensionPer,
-        createDate, medicalBase, medicalPer, accumulationFundBase, accumulationFundPer, name
+       id,name,bonus,allSalary,createDate,issueDate
     </sql>
+
+    <select id="getAllSalaryInfo" resultMap="AllSalaryInfo">
+        SELECT
+            s.*,
+            w.id as wid,w.total as wtotal,w.largeMedical as wlargeMedical,w.basicWage as wbasicWage,w.seniorityWage as wseniorityWage,w.positionWage as wpositionWage,w.performanceWage as wperformanceWage,
+                w.phoneAllowance as wphoneAllowance,w.trafficAllowance as wtrafficAllowance,w.registAllowance as wregistAllowance,
+                w.registSupply as wregistSupply,w.rentSupply as wrentSupply,w.aloneAllowance as waloneAllowance,w.aloneSupply as waloneSupply,w.hui as whui,w.fire as wfire,w.cool as wcool,
+                w.propertyAllowance as wpropertyAllowance,w.warmAllowance as wwarmAllowance,w.warmSupply as wwarmSupply,w.propertySupply as wpropertySupply,
+                w.supply as wsupply,w.deduction as wdeduction,w.sickPersonalLeave as wsickPersonalLeave, w.sum as wsum,w.pension as wpension,w.occupationalAnnuity as woccupationalAnnuity,
+                w.provident as wprovident,w.occupationalAnnuityDecuction as woccupationalAnnuityDecuction,
+                w.largeMedicalDeduction as wlargeMedicalDeduction,w.pensionBack as wpensionBack,w.insuranceDeduction as winsuranceDeduction,w.sumDeduction as wsumDeduction,
+                w.providentBack as wprovidentBack,w.providentDeduction as wprovidentDeduction,w.member as wmember,w.individual as windividual,w.actualSum as wactualSum,
+                w.agencySum as wagencySum,w.deductionSum as wdeductionSum,w.repay as wrepay,w.actualWage as wactualWage,w.addProvidentBack as waddProvidentBack,
+            i.id as iid,i.base as ibase,i.largeMedical as ilargeMedical,i.`month` as imonth,i.pensionPersonalPer as ipensionPersonalPer,i.pensionUnitPer as ipensionUnitPer,
+                i.pensionSumPer as ipensionSumPer,i.medicalPersonalPer as imedicalPersonalPer,
+                i.medicalUnitPer as imedicalUnitPer,i.medicalSumPer as imedicalSumPer,i.joblessPersonalPer as ijoblessPersonalPer,i.joblessUnitPer as ijoblessUnitPer,
+                i.joblessSumPer as ijoblessSumPer,i.injury as iinjury,i.birth as ibirth,i.personalDeduction as ipersonalDeduction,i.unitSum as iunitSum,
+            p.id as pid,p.base as pbase,p.`month` as pmonth,p.total as ptotal,p.per as pper,p.personal as ppersonal,p.unit as punit,p.back as pback
+        from salary s,wage w,insurance i,provident p
+        where i.id = s.insuranceId and p.id = s.providentId and w.id = s.wageId
+        ORDER BY issueDate;
+    </select>
 
     <select id="getAllSalaries" resultMap="BaseResultMap">
         select

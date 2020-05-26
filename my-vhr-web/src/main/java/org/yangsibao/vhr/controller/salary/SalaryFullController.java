@@ -3,30 +3,30 @@ package org.yangsibao.vhr.controller.salary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.yangsibao.vhr.model.RespBean;
-import org.yangsibao.vhr.model.Salary;
-import org.yangsibao.vhr.service.SalaryService;
+import org.yangsibao.vhr.model.SalaryFull;
+import org.yangsibao.vhr.service.SalaryFullService;
 
 import java.util.List;
 
 /**
  * @author yangsibao
- * @date 2020/5/21-19:19
+ * @date 2020/5/26-11:04
  */
 @RestController
-//@RequestMapping("/salary/sob")
-public class SalaryController {
+@RequestMapping("/salary/sob")
+public class SalaryFullController {
 
     @Autowired
-    SalaryService salaryService;
+    SalaryFullService salaryFullService;
 
     @GetMapping("/")
-    public List<Salary> getAllSalaries() {
-        return salaryService.getAllSalaries();
+    public List<SalaryFull> getAllSalaries() {
+        return salaryFullService.getAllSalaryFulls();
     }
 
     @PostMapping("/")
-    public RespBean addSalary(@RequestBody Salary salary) {
-        if (salaryService.addSalary(salary) == 1) {
+    public RespBean addSalary(@RequestBody SalaryFull salaryFull) {
+        if (salaryFullService.addSalaryFull(salaryFull) == 1) {
             return RespBean.ok("添加成功!");
         }
         return RespBean.error("添加失败!");
@@ -34,15 +34,15 @@ public class SalaryController {
 
     @DeleteMapping("/{id}")
     public RespBean deleteSalaryById(@PathVariable Integer id) {
-        if (salaryService.deleteSalaryById(id) == 1) {
+        if (salaryFullService.deleteSalaryFullById(id) == 1) {
             return RespBean.ok("删除成功！");
         }
         return RespBean.error("删除失败！");
     }
 
     @PutMapping("/")
-    public RespBean updateSalaryById(@RequestBody Salary salary) {
-        if (salaryService.updateSalaryById(salary) == 1) {
+    public RespBean updateSalaryById(@RequestBody SalaryFull salaryFull) {
+        if ((salaryFullService.updateSalaryFullById(salaryFull)) == 1) {
             return RespBean.ok("更新成功!");
         }
         return RespBean.error("更新失败!");
