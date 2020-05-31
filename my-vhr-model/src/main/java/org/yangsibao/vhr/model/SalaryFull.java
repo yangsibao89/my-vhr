@@ -3,10 +3,11 @@ package org.yangsibao.vhr.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
-public class SalaryFull {
+public class SalaryFull implements Serializable {
     private Integer id;
 
     private String name;//套账名称

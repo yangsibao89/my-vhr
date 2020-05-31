@@ -68,7 +68,7 @@
             <result column="strafficAllowance" property="trafficallowance" jdbcType="INTEGER"/>
             <result column="sregistAllowance" property="registallowance" jdbcType="INTEGER"/>
             <result column="sregistSupply" property="registsupply" jdbcType="INTEGER"/>
-            <result column="srentAllowance" property="registallowance" jdbcType="INTEGER"/>
+            <result column="srentAllowance" property="rentallowance" jdbcType="INTEGER"/>
             <result column="srentSupply" property="rentsupply" jdbcType="INTEGER"/>
             <result column="saloneAllowance" property="aloneallowance" jdbcType="INTEGER"/>
             <result column="saloneSupply" property="alonesupply" jdbcType="INTEGER"/>

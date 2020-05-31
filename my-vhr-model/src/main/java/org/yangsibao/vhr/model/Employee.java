@@ -57,6 +57,7 @@ public class Employee implements Serializable {
     private String workID;//工号
 
     private Double contractTerm;//合同周期
+
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "Asia/Shanghai")
     private Date beginDate;//入职日期
 

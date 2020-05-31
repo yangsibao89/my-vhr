@@ -191,9 +191,9 @@ public class POIUtils {
             HSSFCell cell24 = row.createCell(24);
             cell24.setCellStyle(dateCellStyle);
             cell24.setCellValue(emp.getEndContract());
-            HSSFCell cell25 = row.createCell(25);
-            cell25.setCellStyle(dateCellStyle);
-            cell25.setCellValue(emp.getConversionTime());
+//            HSSFCell cell25 = row.createCell(25);
+//            cell25.setCellStyle(dateCellStyle);
+//            cell25.setCellValue(emp.getConversionTime());
         }
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();

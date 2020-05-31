@@ -1,7 +1,6 @@
 package org.yangsibao.vhr.exception;
 
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.yangsibao.vhr.model.RespBean;
 
 import java.sql.SQLException;
@@ -11,7 +10,7 @@ import java.sql.SQLIntegrityConstraintViolationException;
  * @author yangsibao
  * @date 2020/5/22-9:44
  */
-@RestControllerAdvice
+//@RestControllerAdvice
 class GlobalExceptionHandler {
 
     @ExceptionHandler(SQLException.class)
